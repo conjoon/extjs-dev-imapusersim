@@ -49,6 +49,7 @@ Ext.define('conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.auth.Authenticatio
                   ret = {}
 
             ret.responseText = Ext.JSON.encode({
+                success : true,
                 data : {
                     firstname : 'John',
                     lastname : 'Smith',
@@ -67,6 +68,9 @@ Ext.define('conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.auth.Authenticatio
             });
 
             if (username === "TESTFAIL") {
+                ret.responseText = Ext.JSON.encode({
+                    success : false
+                });
                 ret.status = 401;
             }
 
