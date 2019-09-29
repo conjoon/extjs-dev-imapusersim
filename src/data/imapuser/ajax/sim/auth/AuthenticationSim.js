@@ -39,7 +39,7 @@ Ext.define('conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.auth.Authenticatio
     Ext.ux.ajax.SimManager.register({
         type : 'json',
 
-        url  : /cn_imapuser\/auth(\/\d+)?/,
+        url  : /cn_imapuser\/auth(\/.*)?/im,
 
         doPost: function(ctx) {
             const me = this,
