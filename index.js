@@ -23,12 +23,4 @@
  * USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/**
- * This is a dummy class that takes care of requiring all sim definitions
- * from the data.imapuser.ajax.sim namespace for local development.
- */
-Ext.define("conjoon.dev.cn_imapusersim.data.imapuser.PackageSim", {
-    requires: [
-        "conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.auth.AuthenticationSim"
-    ]
-});
+// intentionally left empty

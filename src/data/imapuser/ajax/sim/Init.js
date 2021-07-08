@@ -1,7 +1,7 @@
 /**
  * conjoon
- * dev-cn_imapusersim
- * Copyright (C) 2019 Thorsten Suckow-Homberg https://github.com/conjoon/dev-cn_imapusersim
+ * extjs-dev-imapusersim
+ * Copyright (C) 2019-2021 Thorsten Suckow-Homberg https://github.com/conjoon/extjs-dev-imapusersim
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -26,19 +26,19 @@
 /**
  *
  */
-Ext.define('conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.Init', {
+Ext.define("conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.Init", {
     requires: [
-        'Ext.ux.ajax.JsonSimlet',
-        'Ext.ux.ajax.SimManager'
+        "Ext.ux.ajax.JsonSimlet",
+        "Ext.ux.ajax.SimManager"
     ],
 
     singleton: true,
 
-    constructor: function() {
+    constructor: function () {
 
         Ext.ux.ajax.SimManager.init({
-            delay : 1,
-            defaultSimlet : null
+            delay: 1,
+            defaultSimlet: null
         });
 
     }

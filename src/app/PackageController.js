@@ -1,7 +1,7 @@
 /**
  * conjoon
- * dev-cn_imapusersim
- * Copyright (C) 2019 Thorsten Suckow-Homberg https://github.com/conjoon/dev-cn_imapusersim
+ * extjs-dev-imapusersim
+ * Copyright (C) 2019-2021 Thorsten Suckow-Homberg https://github.com/conjoon/extjs-dev-imapusersim
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -24,16 +24,16 @@
  */
 
 /**
- * PackageController for the dev-cn_imapusersim package.
+ * PackageController for the extjs-dev-imapusersim package.
  * Simply tags this package to make sure it can be loaded into a coon.js-Application.
  * Requires PackageSim and makes sure mocks are registered.
  */
-Ext.define('conjoon.dev.cn_imapusersim.app.PackageController', {
+Ext.define("conjoon.dev.cn_imapusersim.app.PackageController", {
 
-    extend : 'coon.core.app.PackageController',
+    extend: "coon.core.app.PackageController",
 
-    requires : [
-        'conjoon.dev.cn_imapusersim.data.imapuser.PackageSim'
+    requires: [
+        "conjoon.dev.cn_imapusersim.data.imapuser.PackageSim"
     ]
 
 });
