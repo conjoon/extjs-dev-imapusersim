@@ -1,6 +1,7 @@
 {
   "name": "@conjoon/extjs-dev-imapusersim",
   "sencha": {
+    "name": "extjs-dev-imapusersim",
     "namespace": "conjoon.dev.cn_imapusersim",
     "coon-js": {
       "package": {
@@ -42,7 +43,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node-git-hooks"
+    "build:dev": "npx node-git-hooks",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",

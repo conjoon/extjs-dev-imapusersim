@@ -7,12 +7,21 @@ When using this package, all backend requests of `extjs-app-imapuser` will be re
 npm install --save-dev @conjoon/extjs-dev-imapusersim
 ```
 
+If you want to develop with this package, run the `build:dev`-script afterwards:
+```bash
+npm run build:dev
+```
+Testing environment will then be available via
+
+```bash
+npm test
+```
 ## Usage
 Simply update the app.json of the conjoon-application
 by specifying this package in the `uses`-property in either the `development` and/or `prodution` section:
 
 *Example:*
-````javascript
+```javascript
 "development": {
         "uses" : [
             "extjs-dev-imapusersim",
@@ -27,7 +36,7 @@ by specifying this package in the `uses`-property in either the `development` an
             "extjs-app-webmail"
         ]
 }
-````
+```
 
 Notice how in the example above all backend requests made by the [conjoon/extjs-app-imapuser](https://github.com/conjoon/extjs-app-imapuser) package
 will be intercepted by the backend-mocks of the `extjs-dev-imapusersim` package when using the development-version.
