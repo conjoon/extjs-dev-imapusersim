@@ -1,7 +1,7 @@
 /**
  * conjoon
- * dev-cn_imapusersim
- * Copyright (C) 2019 Thorsten Suckow-Homberg https://github.com/conjoon/dev-cn_imapusersim
+ * extjs-dev-imapusersim
+ * Copyright (C) 2019-2021 Thorsten Suckow-Homberg https://github.com/conjoon/extjs-dev-imapusersim
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -26,38 +26,37 @@
 /**
  * Ext.ux.ajax.SimManager hook for Authenticating a user against an IMAP server.
  */
-Ext.define('conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.auth.AuthenticationSim', {
+Ext.define("conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.auth.AuthenticationSim", {
 
-    requires : [
-        'conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.Init'
+    requires: [
+        "conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.Init"
     ]
 
-}, function() {
-
+}, function () {
 
 
     Ext.ux.ajax.SimManager.register({
-        type : 'json',
+        type: "json",
 
-        url  : /cn_imapuser\/auth(\/.*)?/im,
+        url: /cn_imapuser\/auth(\/.*)?/im,
 
-        doPost: function(ctx) {
+        doPost: function (ctx) {
             const me = this,
-                  params = ctx.xhr.options.params,
-                  username = params.username,
-                  password = params.password,
-                  ret = {}
+                params = ctx.xhr.options.params,
+                username = params.username,
+                password = params.password,
+                ret = {};
 
             ret.responseText = Ext.JSON.encode({
-                success : true,
-                data : {
-                    firstname : 'John',
-                    lastname : 'Smith',
-                    username : username,
-                    emailAddress : username,
-                    isRoot : false,
-                    lastLogin : new Date(),
-                    password : password
+                success: true,
+                data: {
+                    firstname: "John",
+                    lastname: "Smith",
+                    username: username,
+                    emailAddress: username,
+                    isRoot: false,
+                    lastLogin: new Date(),
+                    password: password
                 }
             });
 
@@ -69,7 +68,7 @@ Ext.define('conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.auth.Authenticatio
 
             if (username === "TESTFAIL") {
                 ret.responseText = Ext.JSON.encode({
-                    success : false
+                    success: false
                 });
                 ret.status = 401;
             }
