@@ -1,6 +1,6 @@
 # @conjoons/extjs-dev-imapusersim 
 This Sencha ExtJS NPM package contains mock data for development of [conjoon/extjs-app-imapuser](https://github.com/conjoon/extjs-app-imapuser).
-When using this package, all backend requests of `extjs-app-imapuser` will be replaced with mocks.
+When using this package, configured backend requests of `extjs-app-imapuser` will be intercepted.
 
 ## Installation
 ```
@@ -16,14 +16,15 @@ Testing environment will then be available via
 ```bash
 npm test
 ```
+
 ## Usage
-Simply update the app.json of the conjoon-application
-by specifying this package in the `uses`-property in either the `development` and/or `prodution` section:
+Update the `app.json` of the application by specifying this package in the `uses`-property in 
+either the `development` and/or `prodution` section:
 
 *Example:*
-```javascript
+```json
 "development": {
-        "uses" : [
+        "uses": [
             "extjs-dev-imapusersim",
             "extjs-app-imapuser",
             "extjs-app-webmail",
@@ -31,20 +32,33 @@ by specifying this package in the `uses`-property in either the `development` an
         ]
 },
 "production": {
-        "uses" : [
+        "uses": [
             "extjs-app-imapuser",
             "extjs-app-webmail"
         ]
 }
 ```
+In order to properly intercept outgoing requests to the services as described in **conjoon/rest-api-descriptions/imap-user**,
+the package needs to be configured with a regular expression representing the url to catch. 
+The package is pre-configured so that it catches urls in the form of `https://php-ms-imapuser.ddev.site/rest-imapuser/api/v1/auth`.
+A custom configuration can be placed in the resources-folder of the application using the package.
 
-Notice how in the example above all backend requests made by the [conjoon/extjs-app-imapuser](https://github.com/conjoon/extjs-app-imapuser) package
-will be intercepted by the backend-mocks of the `extjs-dev-imapusersim` package when using the development-version.
+```json
+{
+    "auth": {
+        "url": "https://php-ms-imapuser.ddev.site/rest-imapuser/api/v.*?/auth(/.*)?",
+        "enabled": true,
+        "delay": 250
+    }
+}
+```
+If this package is used in your environment, intercepting urls can be enabled/disabled by changing the property `enabled`
+to either `true` or `false`.
+<br>Please refer to the documentation of [extjs-lib-core](https://github.com/coon-js/extjs-lib-core) on how to
+create package-specific configurations.
 
-## Dev 
-### Naming
-The following naming conventions apply:
 
+### Dev Notes
 #### Namespace
 `conjoon.dev.cn_imapusersim.*`
 #### Package name

@@ -26,57 +26,46 @@
 /**
  * Ext.ux.ajax.SimManager hook for Authenticating a user against an IMAP server.
  */
-Ext.define("conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.auth.AuthenticationSim", {
+Ext.define("conjoon.dev.cn_imapusersim.data.AuthenticationSim", {
 
-    requires: [
-        "conjoon.dev.cn_imapusersim.data.imapuser.ajax.sim.Init"
-    ]
+    extend: "Ext.ux.ajax.JsonSimlet",
 
-}, function () {
+    type: "json",
 
+    doPost: function (ctx) {
+        const me = this,
+            params = ctx.xhr.options.params,
+            username = params.username,
+            password = params.password,
+            ret = {};
 
-    Ext.ux.ajax.SimManager.register({
-        type: "json",
-
-        url: /cn_imapuser\/auth(\/.*)?/im,
-
-        doPost: function (ctx) {
-            const me = this,
-                params = ctx.xhr.options.params,
-                username = params.username,
-                password = params.password,
-                ret = {};
-
-            ret.responseText = Ext.JSON.encode({
-                success: true,
-                data: {
-                    firstname: "John",
-                    lastname: "Smith",
-                    username: username,
-                    emailAddress: username,
-                    isRoot: false,
-                    lastLogin: new Date(),
-                    password: password
-                }
-            });
-
-            Ext.Array.forEach(me.responseProps, function (prop) {
-                if (prop in me) {
-                    ret[prop] = me[prop];
-                }
-            });
-
-            if (username === "TESTFAIL") {
-                ret.responseText = Ext.JSON.encode({
-                    success: false
-                });
-                ret.status = 401;
+        ret.responseText = Ext.JSON.encode({
+            success: true,
+            data: {
+                firstname: "John",
+                lastname: "Smith",
+                username: username,
+                emailAddress: username,
+                isRoot: false,
+                lastLogin: new Date(),
+                password: password
             }
+        });
 
-            return ret;
+        Ext.Array.forEach(me.responseProps, function (prop) {
+            if (prop in me) {
+                ret[prop] = me[prop];
+            }
+        });
 
-
+        if (username === "TESTFAIL") {
+            ret.responseText = Ext.JSON.encode({
+                success: false
+            });
+            ret.status = 401;
         }
-    });
+
+        return ret;
+    }
 
 });
