@@ -5,7 +5,14 @@
     "namespace": "conjoon.dev.cn_imapusersim",
     "coon-js": {
       "package": {
-        "controller": true
+        "controller": true,
+        "config" : {
+          "auth": {
+            "url": "https://php-ms-imapuser.ddev.site/rest-imapuser/api/v.*?/auth(/.*)?",
+            "enabled": true,
+            "delay": 250
+          }
+        }
       }
     },
     "type": "code",
@@ -20,10 +27,17 @@
     "output": {
       "base": "${package.dir}/build",
       "js": {
-        "version": "ES6"
+        "version": "ES8"
+      }
+    },
+    "language": {
+      "js": {
+        "input": "ES8",
+        "output": "ES8"
       }
     },
     "compressor": {
+      "type": "closure",
       "polyfills": "none"
     },
     "local": true,

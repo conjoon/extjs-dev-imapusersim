@@ -25,15 +25,43 @@
 
 /**
  * PackageController for the extjs-dev-imapusersim package.
- * Simply tags this package to make sure it can be loaded into a coon.js-Application.
- * Requires PackageSim and makes sure mocks are registered.
+ * Inits the simlet for mocking authorization requests.
  */
 Ext.define("conjoon.dev.cn_imapusersim.app.PackageController", {
 
     extend: "coon.core.app.PackageController",
 
+
     requires: [
-        "conjoon.dev.cn_imapusersim.data.imapuser.PackageSim"
-    ]
+        "Ext.ux.ajax.SimManager",
+        "conjoon.dev.cn_imapusersim.data.AuthenticationSim"
+    ],
+
+
+    /**
+     * Initializes the package with the simlet.
+     * @param app
+     */
+    init (app) {
+        "use strict";
+
+        const
+            me = this,
+            config = app.getPackageConfig(me, "auth");
+
+        if (!config.enabled) {
+            return;
+        }
+
+        const regex =  new RegExp(config.url, "im");
+
+        Ext.ux.ajax.SimManager.register(
+            Ext.create("conjoon.dev.cn_imapusersim.data.AuthenticationSim", {
+                url: regex,
+                delay: config.delay
+            })
+        );
+
+    }
 
 });
