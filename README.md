@@ -23,22 +23,24 @@ either the `development` and/or `prodution` section:
 
 *Example:*
 ```json
-"development": {
+{
+    "development": {
         "uses": [
             "extjs-dev-imapusersim",
             "extjs-app-imapuser",
             "extjs-app-webmail",
             "extjs-dev-webmailsim"
         ]
-},
-"production": {
+    },
+    "production": {
         "uses": [
             "extjs-app-imapuser",
             "extjs-app-webmail"
         ]
+    }
 }
 ```
-In order to properly intercept outgoing requests to the services as described in **conjoon/rest-api-descriptions/imap-user**,
+In order to properly intercept outgoing requests to the services as described in **conjoon/rest-api-descriptions/rest-imapuser**,
 the package needs to be configured with a regular expression representing the url to catch. 
 The package is pre-configured so that it catches urls in the form of `https://php-ms-imapuser.ddev.site/rest-imapuser/api/v1/auth`.
 A custom configuration can be placed in the resources-folder of the application using the package.
