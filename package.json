@@ -5,14 +5,10 @@
     "namespace": "conjoon.dev.cn_imapusersim",
     "coon-js": {
       "package": {
-        "controller": true,
-        "config" : {
-          "auth": {
-            "url": "https://php-ms-imapuser.ddev.site/rest-imapuser/api/v.*?/auth(/.*)?",
-            "enabled": true,
-            "delay": 250
-          }
-        }
+        "autoLoad": {
+          "registerController": true
+        },
+        "config" : "${package.resourcePath}/extjs-dev-imapusersim.conf.json"
       }
     },
     "type": "code",

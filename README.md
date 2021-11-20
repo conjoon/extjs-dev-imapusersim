@@ -35,6 +35,16 @@ Example (`workspace.json`) :
 }
 ```
 
+## Configuration options
+
+- `auth.url` - In order to properly intercept outgoing requests to the services as described in 
+  [rest-api-mail](https://github.com/conjoon/rest-api-description),
+  the package needs to be configured with a regular expression representing the url to catch.
+  The package is pre-configured so that it catches urls in the form of `https://php-ms-imapuser.ddev.site/rest-imapuser/api/v0/auth`.
+- `auth.enabled` - If this package is used with your development or production environment, intercepting urls can be enabled/disabled by changing the property `enabled`
+  to either `true` or `false`.
+- `auth.delay` - the delay in milliseconds to mimic network latency
+
 ## Usage
 Update the `app.json` of the application by specifying this package in the `uses`-property in 
 either the `development` and/or `prodution` section:
@@ -58,21 +68,3 @@ either the `development` and/or `prodution` section:
     }
 }
 ```
-In order to properly intercept outgoing requests to the services as described in **conjoon/rest-api-description/rest-imapuser**,
-the package needs to be configured with a regular expression representing the url to catch. 
-The package is pre-configured so that it catches urls in the form of `https://php-ms-imapuser.ddev.site/rest-imapuser/api/v1/auth`.
-A custom configuration can be placed in the resources-folder of the application using the package.
-
-```json
-{
-    "auth": {
-        "url": "https://php-ms-imapuser.ddev.site/rest-imapuser/api/v.*?/auth(/.*)?",
-        "enabled": true,
-        "delay": 250
-    }
-}
-```
-If this package is used in your environment, intercepting urls can be enabled/disabled by changing the property `enabled`
-to either `true` or `false`.
-<br>Please refer to the documentation of [extjs-lib-core](https://github.com/coon-js/extjs-lib-core) on how to
-create package-specific configurations.
