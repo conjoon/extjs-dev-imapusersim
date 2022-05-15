@@ -8,7 +8,7 @@
         "autoLoad": {
           "registerController": true
         },
-        "config" : "${package.resourcePath}/extjs-dev-imapusersim.conf.json"
+        "config": "${package.resourcePath}/extjs-dev-imapusersim.conf.json"
       }
     },
     "type": "code",
@@ -50,7 +50,7 @@
     ]
   },
   "description": "Sencha ExtJS NPM Package for mocking backend requests and data for @conjoon/extjs-app-imapuser.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "build:dev": "npx node-git-hooks",
