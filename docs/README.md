@@ -1,6 +1,6 @@
 # @conjoon/extjs-dev-imapusersim Documentation
 
-**extjs-dev-imapuserim** is a **coon.js** package and is tagged as such in the
+**extjs-dev-imapusersim** is a **coon.js** package and is tagged as such in the
 `package.json`:
 
 ```json
