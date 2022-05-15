@@ -52,5 +52,5 @@ The configuration file for this package has an entry `auth` that holds the follo
 
 ## Response Data
 If an url was intercpted, static data is returned to mimic responses of backends
-fully implementing the [EST API](https://github.com/conjoon/rest-api-description). The data returned
+fully implementing the [REST API](https://github.com/conjoon/rest-api-description). The data returned
 can be edited in this package's `src/data/AuthenticationSim.js`.
