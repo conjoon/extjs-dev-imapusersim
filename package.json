@@ -1,94 +1,94 @@
 {
-    "name": "@conjoon/extjs-dev-imapusersim",
-    "sencha": {
-        "name": "extjs-dev-imapusersim",
-        "namespace": "conjoon.dev.cn_imapusersim",
-        "coon-js": {
-            "package": {
-                "autoLoad": {
-                    "registerController": true
-                },
-                "config": "${package.resourcePath}/extjs-dev-imapusersim.conf.json"
-            }
+  "name": "@conjoon/extjs-dev-imapusersim",
+  "sencha": {
+    "name": "extjs-dev-imapusersim",
+    "namespace": "conjoon.dev.cn_imapusersim",
+    "coon-js": {
+      "package": {
+        "autoLoad": {
+          "registerController": true
         },
-        "type": "code",
-        "toolkit": "classic",
-        "creator": "Thorsten Suckow-Homberg <thorsten@suckow-homberg.de>",
-        "summary": "Sencha ExtJS NPM Package for mocking backend requests and data for @conjoon/extjs-app-imapuser.",
-        "version": "1.0.0",
-        "compatVersion": "1.0.0",
-        "format": "1",
-        "slicer": null,
-        "fashion": null,
-        "output": {
-            "base": "${package.dir}/build",
-            "js": {
-                "version": "ES8"
-            }
-        },
-        "language": {
-            "js": {
-                "input": "ES8",
-                "output": "ES8"
-            }
-        },
-        "compressor": {
-            "type": "closure",
-            "polyfills": "none"
-        },
-        "local": true,
-        "sass": null,
-        "classpath": [
-            "${package.dir}/src"
-        ],
-        "overrides": null,
-        "example": null,
-        "framework": "ext",
-        "requires": [
-            "extjs-lib-core",
-            "ux"
-        ]
+        "config": "${package.resourcePath}/extjs-dev-imapusersim.conf.json"
+      }
     },
-    "description": "Sencha ExtJS NPM Package for mocking backend requests and data for @conjoon/extjs-app-imapuser.",
-    "version": "1.0.1",
-    "main": "index.js",
-    "scripts": {
-        "build:dev": "npx node-git-hooks",
-        "postversion": "git push && git push --tags",
-        "release": "standard-version",
-        "release:patch": "standard-version --release-as patch && npm run postversion",
-        "release:minor": "standard-version --release-as minor && npm run postversion",
-        "release:major": "standard-version --release-as major && npm run postversion"
+    "type": "code",
+    "toolkit": "classic",
+    "creator": "Thorsten Suckow-Homberg <thorsten@suckow-homberg.de>",
+    "summary": "Sencha ExtJS NPM Package for mocking backend requests and data for @conjoon/extjs-app-imapuser.",
+    "version": "1.0.3",
+    "compatVersion": "1.0.3",
+    "format": "1",
+    "slicer": null,
+    "fashion": null,
+    "output": {
+      "base": "${package.dir}/build",
+      "js": {
+        "version": "ES8"
+      }
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/conjoon/extjs-dev-imapusersim.git"
+    "language": {
+      "js": {
+        "input": "ES8",
+        "output": "ES8"
+      }
     },
-    "keywords": [
-        "extjs",
-        "sencha",
-        "l8.js",
-        "l8js",
-        "coonjs",
-        "coon.js",
-        "dev",
-        "simlet",
-        "webmail",
-        "imap",
-        "user"
+    "compressor": {
+      "type": "closure",
+      "polyfills": "none"
+    },
+    "local": true,
+    "sass": null,
+    "classpath": [
+      "${package.dir}/src"
     ],
-    "author": "Thorsten Suckow-Homberg <thorsten@suckow-homberg.de>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/conjoon/extjs-dev-imapusersim/issues"
-    },
-    "homepage": "https://github.com/conjoon/extjs-dev-imapusersim#readme",
-    "devDependencies": {
-        "@commitlint/cli": "^13.2.0",
-        "@commitlint/config-conventional": "^13.2.0",
-        "@coon-js/delorean": "^0.3.1",
-        "eslint": "^7.28.0",
-        "node-git-hooks": "^1.0.6",
-        "standard-version": "^9.3.1"
-    }
+    "overrides": null,
+    "example": null,
+    "framework": "ext",
+    "requires": [
+      "extjs-lib-core",
+      "ux"
+    ]
+  },
+  "description": "Sencha ExtJS NPM Package for mocking backend requests and data for @conjoon/extjs-app-imapuser.",
+  "version": "1.0.4",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "npx node-git-hooks",
+    "postversion": "git push && git push --tags",
+    "release": "standard-version",
+    "release:patch": "standard-version --release-as patch && npm run postversion",
+    "release:minor": "standard-version --release-as minor && npm run postversion",
+    "release:major": "standard-version --release-as major && npm run postversion"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conjoon/extjs-dev-imapusersim.git"
+  },
+  "keywords": [
+    "extjs",
+    "sencha",
+    "l8.js",
+    "l8js",
+    "coonjs",
+    "coon.js",
+    "dev",
+    "simlet",
+    "webmail",
+    "imap",
+    "user"
+  ],
+  "author": "Thorsten Suckow-Homberg <thorsten@suckow-homberg.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/conjoon/extjs-dev-imapusersim/issues"
+  },
+  "homepage": "https://github.com/conjoon/extjs-dev-imapusersim#readme",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "@coon-js/delorean": "^0.3.1",
+    "node-git-hooks": "^1.0.6",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "standard-version": "^9.3.1"
+  }
 }
