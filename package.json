@@ -50,7 +50,7 @@
     ]
   },
   "description": "Sencha ExtJS NPM Package for mocking backend requests and data for @conjoon/extjs-app-imapuser.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "scripts": {
     "build:dev": "npx node-git-hooks",
