@@ -85,6 +85,7 @@
   "homepage": "https://github.com/conjoon/extjs-dev-imapusersim#readme",
   "devDependencies": {
     "eslint": "^7.28.0",
+    "@coon-js/delorean": "^0.3.1",
     "node-git-hooks": "^1.0.6",
     "@commitlint/cli": "^13.2.0",
     "@commitlint/config-conventional": "^13.2.0",
